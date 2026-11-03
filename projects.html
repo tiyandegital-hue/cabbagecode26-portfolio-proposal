@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Projects — [Analyst Name], Data Analyst</title>
+<meta name="description" content="Case studies by [Analyst Name]: churn analysis, retail dashboards, loan risk scoring. Question, data, method, result — all sample data labeled.">
+<meta property="og:title" content="Projects — [Analyst Name]">
+<meta name="theme-color" content="#F7F6F1">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%2316150F'/%3E%3Ctext x='16' y='23' font-family='monospace' font-size='19' font-weight='700' fill='%23fff' text-anchor='middle'%3E%E2%88%91%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap header-in">
+    <a class="brand" href="index.html" aria-label="[Analyst Name] — home">
+      <span class="mark" aria-hidden="true">∑</span>
+      <span data-site>[Analyst Name]</span>
+    </a>
+    <nav class="nav-desktop" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="projects.html" aria-current="page">Projects</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+<nav class="mobile-nav" id="site-nav" aria-label="Mobile">
+  <a href="index.html">Home</a>
+  <a href="projects.html" aria-current="page">Projects</a>
+  <a href="about.html">About</a>
+  <a href="services.html">Services</a>
+  <a href="contact.html">Contact</a>
+</nav>
+
+<main id="main">
+  <section class="hero">
+    <div class="wrap">
+      <span class="eyebrow">Projects · all sample data</span>
+      <h1 class="h-display">
+        <span class="rise"><span>Three questions.</span></span>
+        <span class="rise"><span>Three answers.</span></span>
+      </h1>
+      <p class="lede">Every case study follows the same spine: the question, the data, the method, the result — and the caveats. Filter by the tools each one uses.</p>
+      <div class="chip-row" role="group" aria-label="Filter projects by tool" style="margin-top:32px">
+        <button class="chip" data-filter="all" aria-pressed="true">All</button>
+        <button class="chip" data-filter="excel" aria-pressed="false">Excel</button>
+        <button class="chip" data-filter="powerbi" aria-pressed="false">Power BI</button>
+        <button class="chip" data-filter="sql" aria-pressed="false">SQL</button>
+        <button class="chip" data-filter="python" aria-pressed="false">Python</button>
+      </div>
+      <p class="eyebrow" id="filter-count" aria-live="polite" style="margin-top:20px">3 case studies</p>
+    </div>
+  </section>
+
+  <section class="section-tight" style="padding-top:0">
+    <div class="wrap">
+      <div class="case-grid" id="case-list">
+        <a class="case-card rv" href="project-churn.html" data-tools="sql python excel">
+          <span class="badge-sample">Sample</span>
+          <span class="eyebrow">Customer analytics</span>
+          <span class="q">Why do customers leave — and which ones can still be saved?</span>
+          <span class="m"><strong style="color:var(--ink)">Question:</strong> which plan segments churn, and what would it cost to keep them?<br><strong style="color:var(--ink)">Result:</strong> monthly-plan customers churn at 2.3× the annual rate.</span>
+          <span class="tags"><span class="tag">SQL</span><span class="tag">Python</span><span class="tag">Excel</span></span>
+          <span class="go">Read the case study →</span>
+        </a>
+        <a class="case-card rv" href="project-sales.html" data-tools="powerbi excel">
+          <span class="badge-sample">Sample</span>
+          <span class="eyebrow">Reporting &amp; dashboards</span>
+          <span class="q">A retail dashboard the owner actually opens every Monday.</span>
+          <span class="m"><strong style="color:var(--ink)">Question:</strong> where is growth really coming from, quarter by quarter?<br><strong style="color:var(--ink)">Result:</strong> Q4 in the North region drives 41% of annual growth.</span>
+          <span class="tags"><span class="tag">Power BI</span><span class="tag">Excel</span></span>
+          <span class="go">Read the case study →</span>
+        </a>
+        <a class="case-card rv" href="project-loan.html" data-tools="excel sql">
+          <span class="badge-sample">Sample</span>
+          <span class="eyebrow">Risk &amp; scoring</span>
+          <span class="q">Score the risk, not the applicant.</span>
+          <span class="m"><strong style="color:var(--ink)">Question:</strong> can simple, explainable bands separate good loans from bad?<br><strong style="color:var(--ink)">Result:</strong> high-risk band defaults at 18.4% vs 2.1% low-risk.</span>
+          <span class="tags"><span class="tag">Excel</span><span class="tag">SQL</span></span>
+          <span class="go">Read the case study →</span>
+        </a>
+      </div>
+      <div class="caveats rv" style="margin-top:56px">
+        <h3 class="h3">A note on the data</h3>
+        <ul>
+          <li>Every figure on this page is a <strong>labeled sample</strong> — synthetic data built to demonstrate method, not real client results.</li>
+          <li>Real client work is usually confidential. On engagement, the same pipeline runs on real data with the same cleaning log and caveats.</li>
+          <li>No client names, employers, or testimonials are shown because none are claimed.</li>
+        </ul>
+      </div>
+      <nav class="pager" aria-label="More pages">
+        <a href="index.html"><span class="dir">← Previous</span><span class="t">Back to home</span></a>
+        <a class="next" href="about.html"><span class="dir">Next →</span><span class="t">About the analyst</span></a>
+      </nav>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <h4><span data-site>[Analyst Name]</span> · Data Analyst</h4>
+        <p class="disclosure">Concept demo site by Tiyan Digital — all portfolio content is illustrative. Charts render from labeled sample data; no tracking, no cookies, no third-party requests.</p>
+      </div>
+      <div>
+        <h4>Site</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms of Use</a></li>
+          <li><a href="cookies.html">Cookie Policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="disclosure">Real work by the builder: <a href="https://bluedhaka.com">bluedhaka.com</a> — full e-commerce website designed + built by Tiyan Digital.</p>
+      <p>© <span id="year">2026</span> <span data-site>[Analyst Name]</span></p>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/site.js" defer></script>
+</body>
+</html>

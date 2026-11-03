@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Retail sales dashboard case study — [Analyst Name]</title>
+<meta name="description" content="Case study: a retail sales dashboard built in Power BI + Excel. Sample data, filterable chart, method and caveats.">
+<meta name="theme-color" content="#F7F6F1">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%2316150F'/%3E%3Ctext x='16' y='23' font-family='monospace' font-size='19' font-weight='700' fill='%23fff' text-anchor='middle'%3E%E2%88%91%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap header-in">
+    <a class="brand" href="index.html" aria-label="[Analyst Name] — home">
+      <span class="mark" aria-hidden="true">∑</span>
+      <span data-site>[Analyst Name]</span>
+    </a>
+    <nav class="nav-desktop" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="projects.html" aria-current="page">Projects</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+<nav class="mobile-nav" id="site-nav" aria-label="Mobile">
+  <a href="index.html">Home</a>
+  <a href="projects.html" aria-current="page">Projects</a>
+  <a href="about.html">About</a>
+  <a href="services.html">Services</a>
+  <a href="contact.html">Contact</a>
+</nav>
+
+<main id="main">
+  <section class="hero">
+    <div class="wrap">
+      <span class="eyebrow">Case study · Power BI + Excel</span>
+      <h1 class="h-display" style="font-size:clamp(2.25rem,5.5vw,4.25rem)">
+        <span class="rise"><span>A retail dashboard</span></span>
+        <span class="rise"><span>the owner opens Mondays.</span></span>
+      </h1>
+      <p class="lede" style="margin-top:24px">Most dashboards die in a shared drive. This one survived because it answers exactly three questions — and nothing else.</p>
+      <div style="margin-top:24px"><span class="badge-sample">Sample data throughout</span></div>
+    </div>
+  </section>
+
+  <section class="section-tight" style="padding-top:0">
+    <div class="wrap">
+      <div class="result-tiles rv" aria-label="Key results (sample figures)">
+        <div class="tile"><div class="v">$1.32<span class="u">M</span></div><div class="l">sample annual revenue tracked</div></div>
+        <div class="tile"><div class="v">41<span class="u">%</span></div><div class="l">of annual growth from Q4 North — sample</div></div>
+        <div class="tile"><div class="v">3</div><div class="l">questions on the dashboard. Not thirty.</div></div>
+      </div>
+
+      <div class="sec-head rv" style="margin-top:96px">
+        <span class="eyebrow">The pipeline</span>
+        <h2 class="h2">From spreadsheet chaos to one screen.</h2>
+      </div>
+      <div class="stages rv">
+        <div class="stage"><span class="sn">01</span><h4>Collect</h4><p>POS exports and Excel sheets unified into one table with a shared date key.</p></div>
+        <div class="stage"><span class="sn">02</span><h4>Model</h4><p>Star schema in Power BI: one fact table, clean dimension tables.</p></div>
+        <div class="stage"><span class="sn">03</span><h4>Measure</h4><p>DAX measures for revenue, growth vs last year, and top-region share.</p></div>
+        <div class="stage"><span class="sn">04</span><h4>Design</h4><p>Three questions, one screen each — filters that a non-analyst can use.</p></div>
+        <div class="stage"><span class="sn">05</span><h4>Hand over</h4><p>A 10-minute walkthrough video so the owner never needs me again.</p></div>
+      </div>
+
+      <div class="qa-grid" style="margin-top:96px">
+        <div class="qa-block rv"><h3>The question</h3><p>Where is growth <strong>really</strong> coming from — by quarter, by region — and what should we double down on?</p></div>
+        <div class="qa-block rv"><h3>The data</h3><p>Synthetic sample of <strong>quarterly revenue across 3 regions</strong>, modeled on typical small-retail POS exports.</p></div>
+        <div class="qa-block rv"><h3>The method</h3><p>Power BI star schema + DAX: <strong>year-over-year growth and region share</strong> as the two headline measures. Every visual answers one of the three agreed questions.</p></div>
+        <div class="qa-block rv"><h3>The result</h3><p>Q4 in the North region drives <strong>41% of annual growth</strong> in the sample — the stocking decision for next year writes itself.</p></div>
+      </div>
+
+      <div class="chart-panel rv" style="margin-top:96px">
+        <div class="chart-controls" role="group" aria-label="Filter by region">
+          <button class="chip" data-region="all" aria-pressed="true">All regions</button>
+          <button class="chip" data-region="north" aria-pressed="false">North</button>
+          <button class="chip" data-region="south" aria-pressed="false">South</button>
+          <button class="chip" data-region="west" aria-pressed="false">West</button>
+        </div>
+        <svg class="chart" id="sales-chart" aria-label="Sample quarterly revenue by region"></svg>
+        <p class="chart-note"><span class="badge-sample">Sample</span>&nbsp; Filter by region — the chart re-renders from the embedded sample dataset. Figures in $k, illustrative.</p>
+      </div>
+
+      <div class="caveats rv" style="margin-top:56px">
+        <h3 class="h3">Caveats — stated upfront</h3>
+        <ul>
+          <li>Synthetic sample data — no real store, no real revenue.</li>
+          <li>A real engagement starts by agreeing the <strong>three questions</strong> with the owner before a single visual is built.</li>
+          <li>Dashboards shown here are rebuilt as live web charts; a client Power BI file ships with the .pbix and a walkthrough.</li>
+        </ul>
+      </div>
+
+      <nav class="pager" aria-label="More case studies">
+        <a href="project-churn.html"><span class="dir">← Previous</span><span class="t">The churn analysis</span></a>
+        <a class="next" href="project-loan.html"><span class="dir">Next →</span><span class="t">Loan default risk scoring</span></a>
+      </nav>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <h4><span data-site>[Analyst Name]</span> · Data Analyst</h4>
+        <p class="disclosure">Concept demo site by Tiyan Digital — all portfolio content is illustrative. Charts render from labeled sample data; no tracking, no cookies, no third-party requests.</p>
+      </div>
+      <div>
+        <h4>Site</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms of Use</a></li>
+          <li><a href="cookies.html">Cookie Policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="disclosure">Real work by the builder: <a href="https://bluedhaka.com">bluedhaka.com</a> — full e-commerce website designed + built by Tiyan Digital.</p>
+      <p>© <span id="year">2026</span> <span data-site>[Analyst Name]</span></p>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/site.js" defer></script>
+</body>
+</html>

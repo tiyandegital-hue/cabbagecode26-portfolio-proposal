@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact — [Analyst Name], Data Analyst</title>
+<meta name="description" content="Contact [Analyst Name]: project inquiries for dashboards, analysis, and data automation. Preview form included.">
+<meta name="theme-color" content="#F7F6F1">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%2316150F'/%3E%3Ctext x='16' y='23' font-family='monospace' font-size='19' font-weight='700' fill='%23fff' text-anchor='middle'%3E%E2%88%91%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap header-in">
+    <a class="brand" href="index.html" aria-label="[Analyst Name] — home">
+      <span class="mark" aria-hidden="true">∑</span>
+      <span data-site>[Analyst Name]</span>
+    </a>
+    <nav class="nav-desktop" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="projects.html">Projects</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html" aria-current="page">Contact</a>
+    </nav>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+<nav class="mobile-nav" id="site-nav" aria-label="Mobile">
+  <a href="index.html">Home</a>
+  <a href="projects.html">Projects</a>
+  <a href="about.html">About</a>
+  <a href="services.html">Services</a>
+  <a href="contact.html" aria-current="page">Contact</a>
+</nav>
+
+<main id="main">
+  <section class="hero">
+    <div class="wrap">
+      <span class="eyebrow">Contact</span>
+      <h1 class="h-display">
+        <span class="rise"><span>Send the mess.</span></span>
+        <span class="rise"><span>Get the message.</span></span>
+      </h1>
+      <p class="lede" style="margin-top:24px">Tell me what you're trying to decide. I'll reply with what I'd need from you — and whether I'm the right person.</p>
+    </div>
+  </section>
+
+  <section class="section-tight" style="padding-top:0">
+    <div class="wrap form-grid">
+      <div>
+        <form id="contact-form" novalidate>
+          <div class="field" data-field="name">
+            <label for="f-name">Your name <span class="req" aria-hidden="true">*</span></label>
+            <input id="f-name" name="name" type="text" autocomplete="name" aria-describedby="f-name-err" required>
+            <p class="err" id="f-name-err" role="alert"></p>
+          </div>
+          <div class="field" data-field="email">
+            <label for="f-email">Email <span class="req" aria-hidden="true">*</span></label>
+            <input id="f-email" name="email" type="email" autocomplete="email" aria-describedby="f-email-err" required>
+            <p class="err" id="f-email-err" role="alert"></p>
+          </div>
+          <div class="field" data-field="type">
+            <label for="f-type">What do you need?</label>
+            <select id="f-type" name="type">
+              <option>A dashboard or report</option>
+              <option>Analysis of existing data</option>
+              <option>Data cleanup / automation</option>
+              <option>Something else</option>
+            </select>
+          </div>
+          <div class="field" data-field="message">
+            <label for="f-message">What are you trying to decide? <span class="req" aria-hidden="true">*</span></label>
+            <textarea id="f-message" name="message" aria-describedby="f-message-err" required></textarea>
+            <p class="err" id="f-message-err" role="alert"></p>
+          </div>
+          <div class="consent" data-field="consent">
+            <input id="f-consent" name="consent" type="checkbox">
+            <label for="f-consent">I agree that my message details are used only to reply to this inquiry — see the <a href="privacy.html" style="color:var(--accent)">Privacy Policy</a>. (On this demo site, nothing is actually sent.)</label>
+            <p class="err" role="alert"></p>
+          </div>
+          <button class="btn btn-primary" type="submit">Send message</button>
+          <p class="form-note"><span class="badge-sample">Preview form</span><span>Submitting shows a demo confirmation — nothing is sent anywhere and no data leaves your browser.</span></p>
+        </form>
+        <div class="form-success" id="form-success" hidden>
+          <h3 tabindex="-1">Message received — in this demo.</h3>
+          <p>On the live site this would land in the analyst's inbox, and you'd get a reply within two business days. Nothing was sent; your text never left this page.</p>
+          <p style="margin-top:20px"><a class="btn btn-secondary" href="index.html">Back to home</a></p>
+        </div>
+      </div>
+      <aside class="reach-rail rv" aria-label="Other ways to reach out">
+        <h3>Other ways to reach me</h3>
+        <div class="reach-item">
+          <span class="ic" aria-hidden="true">@</span>
+          <div><a href="https://www.threads.com/@cabbagecode26" rel="noopener">Threads DM</a><small>Fastest — usually replies same day</small></div>
+        </div>
+        <div class="reach-item">
+          <span class="ic" aria-hidden="true">✉</span>
+          <div><a href="mailto:hello@example.com">hello@example.com</a> <span class="badge-sample">Placeholder</span><small>For longer briefs and files</small></div>
+        </div>
+        <div class="reach-item">
+          <span class="ic" aria-hidden="true">◷</span>
+          <div>Response time<small>Within 2 business days <span class="badge-sample">Sample</span></small></div>
+        </div>
+      </aside>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <h4><span data-site>[Analyst Name]</span> · Data Analyst</h4>
+        <p class="disclosure">Concept demo site by Tiyan Digital — all portfolio content is illustrative. Charts render from labeled sample data; no tracking, no cookies, no third-party requests.</p>
+      </div>
+      <div>
+        <h4>Site</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms of Use</a></li>
+          <li><a href="cookies.html">Cookie Policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="disclosure">Real work by the builder: <a href="https://bluedhaka.com">bluedhaka.com</a> — full e-commerce website designed + built by Tiyan Digital.</p>
+      <p>© <span id="year">2026</span> <span data-site>[Analyst Name]</span></p>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/site.js" defer></script>
+</body>
+</html>

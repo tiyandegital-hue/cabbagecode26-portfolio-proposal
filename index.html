@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Home — [Analyst Name], Data Analyst</title>
+<meta name="description" content="Portfolio of [Analyst Name] — data analyst working in Excel, Power BI, and SQL. Case studies, methods, and an interactive sample-data demo.">
+<meta property="og:title" content="[Analyst Name] — Data Analyst">
+<meta property="og:description" content="Raw data in. Decisions out. Portfolio with live sample-data demos.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#F7F6F1">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%2316150F'/%3E%3Ctext x='16' y='23' font-family='monospace' font-size='19' font-weight='700' fill='%23fff' text-anchor='middle'%3E%E2%88%91%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap header-in">
+    <a class="brand" href="index.html" aria-label="[Analyst Name] — home">
+      <span class="mark" aria-hidden="true">∑</span>
+      <span data-site>[Analyst Name]</span>
+    </a>
+    <nav class="nav-desktop" aria-label="Primary">
+      <a href="index.html" aria-current="page">Home</a>
+      <a href="projects.html">Projects</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+<nav class="mobile-nav" id="site-nav" aria-label="Mobile">
+  <a href="index.html" aria-current="page">Home</a>
+  <a href="projects.html">Projects</a>
+  <a href="about.html">About</a>
+  <a href="services.html">Services</a>
+  <a href="contact.html">Contact</a>
+</nav>
+
+<main id="main">
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow">Data analyst · Excel / Power BI / SQL</span>
+        <h1 class="h-display">
+          <span class="rise"><span>Raw data in.</span></span>
+          <span class="rise"><span>Decisions out.</span></span>
+        </h1>
+        <p class="lede">I'm <span data-site>[Analyst Name]</span> — I turn messy spreadsheets and scattered databases into answers a business can act on. Every dataset on this site is a labeled sample; the method is real.</p>
+        <div class="hero-ctas">
+          <a class="btn btn-primary" href="projects.html">See the work</a>
+          <a class="btn btn-secondary" href="contact.html">Get in touch</a>
+        </div>
+      </div>
+      <div class="frame-offset">
+        <figure class="hero-card">
+          <div class="card-top">
+            <span class="eyebrow">Sample · monthly signups</span>
+            <span class="badge-sample">Sample</span>
+          </div>
+          <svg class="chart" id="hero-chart" aria-label="Bar chart of sample monthly signups"></svg>
+          <figcaption>Illustrative figures — what a client dashboard panel looks like, built with real code on this page.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- SIGNATURE: mess -> message -->
+  <section class="section band" aria-labelledby="proof-h">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <span class="eyebrow">Live demo · sample data</span>
+        <h2 class="h2" id="proof-h">From mess to message.</h2>
+        <p class="lede">Anyone can paste a chart. The work is everything before it. Step through a sample customer dataset exactly the way I'd handle a real one.</p>
+      </div>
+      <div class="pipeline rv" id="pipeline">
+        <div class="pipeline-head">
+          <div class="stage-btns" role="group" aria-label="Pipeline stages">
+            <button type="button" aria-pressed="true" aria-controls="panel-raw" data-stage="Raw"><span class="n" aria-hidden="true">1</span>Raw</button>
+            <button type="button" aria-pressed="false" aria-controls="panel-clean" data-stage="Clean" tabindex="-1"><span class="n" aria-hidden="true">2</span>Clean</button>
+            <button type="button" aria-pressed="false" aria-controls="panel-insight" data-stage="Insight" tabindex="-1"><span class="n" aria-hidden="true">3</span>Insight</button>
+          </div>
+          <span class="badge-sample">Sample dataset</span>
+        </div>
+        <p class="sr-only" aria-live="polite" id="pipeline-live"></p>
+        <div class="pipeline-body">
+          <div class="pipeline-panel" id="panel-raw" role="tabpanel" aria-label="Stage 1: raw data">
+            <div class="issue-chips" aria-label="Data quality issues found">
+              <span class="issue">2 missing values</span>
+              <span class="issue">1 duplicate row</span>
+              <span class="issue">2 inconsistent labels</span>
+              <span class="issue">1 outlier</span>
+            </div>
+            <div class="table-scroll">
+              <table class="data">
+                <caption>Sample customer extract — as received</caption>
+                <thead><tr><th>customer_id</th><th>plan</th><th class="num">tenure_mo</th><th class="num">monthly_spend</th><th>churned</th></tr></thead>
+                <tbody>
+                  <tr><td>C-1041</td><td>Monthly</td><td class="num">14</td><td class="num">$49.00</td><td>No</td></tr>
+                  <tr><td>C-1042</td><td>Annual</td><td class="num">32</td><td class="num">$39.00</td><td>No</td></tr>
+                  <tr><td>C-1043</td><td class="flag">monthly<span class="cell-note">inconsistent case</span></td><td class="num">3</td><td class="num flag">—<span class="cell-note">missing</span></td><td>Yes</td></tr>
+                  <tr><td class="flag">C-1042<span class="cell-note">duplicate row</span></td><td>Annual</td><td class="num">32</td><td class="num">$39.00</td><td>No</td></tr>
+                  <tr><td>C-1045</td><td>Annual</td><td class="num">28</td><td class="num">$39.00</td><td>No</td></tr>
+                  <tr><td>C-1046</td><td class="flag">Monthy<span class="cell-note">typo</span></td><td class="num">9</td><td class="num">$49.00</td><td>Yes</td></tr>
+                  <tr><td>C-1047</td><td>Annual</td><td class="num flag">—<span class="cell-note">missing</span></td><td class="num">$39.00</td><td>No</td></tr>
+                  <tr><td>C-1048</td><td>Monthly</td><td class="num">21</td><td class="num flag">$4,900<span class="cell-note">outlier — decimal error</span></td><td>No</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="method-note">This is what data actually looks like on arrival. <strong>Step 2 cleans it — nothing is deleted silently.</strong></p>
+          </div>
+          <div class="pipeline-panel" id="panel-clean" role="tabpanel" aria-label="Stage 2: cleaned data" hidden>
+            <div class="issue-chips" aria-label="Cleaning actions applied">
+              <span class="issue ok">1 duplicate removed</span>
+              <span class="issue ok">2 cells imputed (median)</span>
+              <span class="issue ok">labels standardized</span>
+              <span class="issue ok">1 outlier corrected → $49.00</span>
+            </div>
+            <div class="table-scroll">
+              <table class="data">
+                <caption>Sample customer extract — after cleaning (7 unique rows)</caption>
+                <thead><tr><th>customer_id</th><th>plan</th><th class="num">tenure_mo</th><th class="num">monthly_spend</th><th>churned</th></tr></thead>
+                <tbody>
+                  <tr><td>C-1041</td><td>Monthly</td><td class="num">14</td><td class="num">$49.00</td><td>No</td></tr>
+                  <tr><td>C-1042</td><td>Annual</td><td class="num">32</td><td class="num">$39.00</td><td>No</td></tr>
+                  <tr><td>C-1043</td><td>Monthly</td><td class="num">3</td><td class="num">$49.00*</td><td>Yes</td></tr>
+                  <tr><td>C-1045</td><td>Annual</td><td class="num">28</td><td class="num">$39.00</td><td>No</td></tr>
+                  <tr><td>C-1046</td><td>Monthly</td><td class="num">9</td><td class="num">$49.00</td><td>Yes</td></tr>
+                  <tr><td>C-1047</td><td>Annual</td><td class="num">17.5*</td><td class="num">$39.00</td><td>No</td></tr>
+                  <tr><td>C-1048</td><td>Monthly</td><td class="num">21</td><td class="num">$49.00</td><td>No</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="method-note">* Imputed with the column median — <strong>every fix is logged, never hidden.</strong> On a real engagement this log ships with the analysis.</p>
+          </div>
+          <div class="pipeline-panel" id="panel-insight" role="tabpanel" aria-label="Stage 3: insight" hidden>
+            <svg class="chart" id="insight-chart" aria-label="Sample churn rate by plan"></svg>
+            <div class="insight-callout">
+              <span class="k">The insight</span>
+              Annual-plan customers churn at roughly a third the rate of monthly ones. In this sample, moving just 10% of the base to annual billing is worth about $40k a year.
+            </div>
+            <p class="chart-note"><span class="badge-sample">Sample figures</span>&nbsp; Illustrative numbers on a synthetic 8-row extract. On real data, the same pipeline runs unchanged — only the dataset grows.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SELECTED WORK -->
+  <section class="section" aria-labelledby="work-h">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <span class="eyebrow">Selected work</span>
+        <h2 class="h2" id="work-h">Case studies, not screenshots.</h2>
+        <p class="lede">Each one opens with the question, the data, and the method — then the result. All figures are labeled samples.</p>
+      </div>
+      <div class="case-grid">
+        <a class="case-card rv" href="project-churn.html">
+          <span class="badge-sample">Sample</span>
+          <span class="q">Why do customers leave — and which ones can still be saved?</span>
+          <span class="m"><strong style="color:var(--ink)">Result:</strong> monthly-plan customers churn at 2.3× the annual rate in the sample data.</span>
+          <span class="tags"><span class="tag">SQL</span><span class="tag">Python</span><span class="tag">Excel</span></span>
+          <span class="go">Read the case study →</span>
+        </a>
+        <a class="case-card rv" href="project-sales.html">
+          <span class="badge-sample">Sample</span>
+          <span class="q">A retail dashboard the owner actually opens every Monday.</span>
+          <span class="m"><strong style="color:var(--ink)">Result:</strong> Q4 in the North region drives 41% of annual growth in the sample.</span>
+          <span class="tags"><span class="tag">Power BI</span><span class="tag">Excel</span></span>
+          <span class="go">Read the case study →</span>
+        </a>
+        <a class="case-card rv" href="project-loan.html">
+          <span class="badge-sample">Sample</span>
+          <span class="q">Score the risk, not the applicant.</span>
+          <span class="m"><strong style="color:var(--ink)">Result:</strong> the high-risk band defaults at 18.4% vs 2.1% for low-risk — sample data.</span>
+          <span class="tags"><span class="tag">Excel</span><span class="tag">SQL</span></span>
+          <span class="go">Read the case study →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- TOOLBELT MARQUEE -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span>Excel <i>◆</i></span><span>Power BI <i>◆</i></span><span>SQL <i>◆</i></span><span>Python <i>◆</i></span><span>Data modeling <i>◆</i></span><span>DAX <i>◆</i></span><span>ETL pipelines <i>◆</i></span><span>Dashboard design <i>◆</i></span>
+      <span>Excel <i>◆</i></span><span>Power BI <i>◆</i></span><span>SQL <i>◆</i></span><span>Python <i>◆</i></span><span>Data modeling <i>◆</i></span><span>DAX <i>◆</i></span><span>ETL pipelines <i>◆</i></span><span>Dashboard design <i>◆</i></span>
+    </div>
+  </div>
+
+  <!-- PROOF -->
+  <section class="section-tight" aria-label="About this demo">
+    <div class="wrap">
+      <div class="proof-card rv">
+        <div>
+          <span class="eyebrow">Built to prove, not to promise</span>
+          <h3 class="h3">This concept site was designed and built by Tiyan Digital.</h3>
+          <p>The portfolio content above is illustrative — written to show the structure a real analyst site needs. For proof of our own work: <strong style="color:#fff">bluedhaka.com</strong>, a full e-commerce website we designed and built, live today.</p>
+        </div>
+        <a class="btn btn-secondary" href="https://bluedhaka.com" rel="noopener">See bluedhaka.com</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="final-cta">
+    <div class="wrap">
+      <span class="eyebrow rv">One question to start</span>
+      <h2 class="h-display rv">Have a dataset<br>that needs answers?</h2>
+      <p class="lede rv">Send the mess. I'll send back the message — with the cleaning log to prove it.</p>
+      <a class="btn btn-primary rv" href="contact.html">Get in touch</a>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <h4><span data-site>[Analyst Name]</span> · Data Analyst</h4>
+        <p class="disclosure">Concept demo site by Tiyan Digital — all portfolio content is illustrative. Charts render from labeled sample data; no tracking, no cookies, no third-party requests.</p>
+      </div>
+      <div>
+        <h4>Site</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms of Use</a></li>
+          <li><a href="cookies.html">Cookie Policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="disclosure">Real work by the builder: <a href="https://bluedhaka.com">bluedhaka.com</a> — full e-commerce website designed + built by Tiyan Digital.</p>
+      <p>© <span id="year">2026</span> <span data-site>[Analyst Name]</span></p>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/site.js" defer></script>
+</body>
+</html>

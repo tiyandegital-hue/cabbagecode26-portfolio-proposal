@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Loan default risk case study — [Analyst Name]</title>
+<meta name="description" content="Case study: explainable loan risk scoring in Excel + SQL. Why default rate beats accuracy, sample data, method and caveats.">
+<meta name="theme-color" content="#F7F6F1">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%2316150F'/%3E%3Ctext x='16' y='23' font-family='monospace' font-size='19' font-weight='700' fill='%23fff' text-anchor='middle'%3E%E2%88%91%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap header-in">
+    <a class="brand" href="index.html" aria-label="[Analyst Name] — home">
+      <span class="mark" aria-hidden="true">∑</span>
+      <span data-site>[Analyst Name]</span>
+    </a>
+    <nav class="nav-desktop" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="projects.html" aria-current="page">Projects</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+<nav class="mobile-nav" id="site-nav" aria-label="Mobile">
+  <a href="index.html">Home</a>
+  <a href="projects.html" aria-current="page">Projects</a>
+  <a href="about.html">About</a>
+  <a href="services.html">Services</a>
+  <a href="contact.html">Contact</a>
+</nav>
+
+<main id="main">
+  <section class="hero">
+    <div class="wrap">
+      <span class="eyebrow">Case study · Excel + SQL</span>
+      <h1 class="h-display" style="font-size:clamp(2.25rem,5.5vw,4.25rem)">
+        <span class="rise"><span>Score the risk,</span></span>
+        <span class="rise"><span>not the applicant.</span></span>
+      </h1>
+      <p class="lede" style="margin-top:24px">A lender needed a risk view a loan officer could explain in one sentence. Three bands, six features, zero black box.</p>
+      <div style="margin-top:24px"><span class="badge-sample">Sample data throughout</span></div>
+    </div>
+  </section>
+
+  <section class="section-tight" style="padding-top:0">
+    <div class="wrap">
+      <div class="result-tiles rv" aria-label="Key results (sample figures)">
+        <div class="tile"><div class="v">18.4<span class="u">%</span></div><div class="l">default rate, high-risk band — sample</div></div>
+        <div class="tile"><div class="v">2.1<span class="u">%</span></div><div class="l">default rate, low-risk band — sample</div></div>
+        <div class="tile"><div class="v">8.8<span class="u">×</span></div><div class="l">separation between bands — sample</div></div>
+      </div>
+
+      <div class="insight-callout rv" style="margin-top:56px; max-width:none">
+        <span class="k">Why this metric, not accuracy</span>
+        With a 4.3% base default rate, a model that predicts "no default" for everyone scores 95.7% accuracy — and tells you nothing. Default rate per band is the number that actually prices risk. Report the metric that fits the problem, and say why.
+      </div>
+
+      <div class="sec-head rv" style="margin-top:96px">
+        <span class="eyebrow">The pipeline</span>
+        <h2 class="h2">Explainable beats clever.</h2>
+      </div>
+      <div class="stages rv">
+        <div class="stage"><span class="sn">01</span><h4>Pull</h4><p>SQL extracts loan history: amount, term, income band, past delinquencies.</p></div>
+        <div class="stage"><span class="sn">02</span><h4>Engineer</h4><p>Six features a loan officer already understands — no opaque embeddings.</p></div>
+        <div class="stage"><span class="sn">03</span><h4>Band</h4><p>Score → three bands with published cutoffs, in a plain Excel model.</p></div>
+        <div class="stage"><span class="sn">04</span><h4>Validate</h4><p>Default rate per band on held-out sample; separation checked, not assumed.</p></div>
+        <div class="stage"><span class="sn">05</span><h4>Ship</h4><p>One-page cutoff sheet + the Excel file. Usable without me in the room.</p></div>
+      </div>
+
+      <div class="qa-grid" style="margin-top:96px">
+        <div class="qa-block rv"><h3>The question</h3><p>Can <strong>simple, explainable bands</strong> separate loans that repay from loans that default — well enough to price on?</p></div>
+        <div class="qa-block rv"><h3>The data</h3><p>Synthetic sample of <strong>2,400 loan records</strong>: amount, term, income band, employment length, past delinquencies, outcome.</p></div>
+        <div class="qa-block rv"><h3>The method</h3><p>Weighted scorecard in Excel, cutoffs set on a training split, <strong>validated on held-out sample data</strong>. SQL does the extraction and the band assignment at scale.</p></div>
+        <div class="qa-block rv"><h3>The result</h3><p>High-risk band defaults at <strong>18.4%</strong> vs <strong>2.1%</strong> for low-risk — an 8.8× separation a loan officer can quote.</p></div>
+      </div>
+
+      <div class="chart-panel rv" style="margin-top:96px">
+        <svg class="chart" id="loan-chart" aria-label="Sample default rate by risk band"></svg>
+        <p class="chart-note"><span class="badge-sample">Sample</span>&nbsp; Illustrative default rates on synthetic data. The shape — wide separation, monotonic bands — is what validation looks for.</p>
+      </div>
+
+      <div class="caveats rv" style="margin-top:56px">
+        <h3 class="h3">Caveats — stated upfront</h3>
+        <ul>
+          <li>Synthetic sample data — no real borrowers, no real defaults.</li>
+          <li>Risk models affect people's access to credit. A production version needs fairness review, monitoring, and a human in the loop — <strong>this demo is a methods illustration, not a lending product.</strong></li>
+          <li>Band cutoffs here are illustrative; real cutoffs are set with the lender's risk team, not by the analyst alone.</li>
+        </ul>
+      </div>
+
+      <nav class="pager" aria-label="More case studies">
+        <a href="project-sales.html"><span class="dir">← Previous</span><span class="t">The retail dashboard</span></a>
+        <a class="next" href="project-churn.html"><span class="dir">Next →</span><span class="t">The churn analysis</span></a>
+      </nav>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <h4><span data-site>[Analyst Name]</span> · Data Analyst</h4>
+        <p class="disclosure">Concept demo site by Tiyan Digital — all portfolio content is illustrative. Charts render from labeled sample data; no tracking, no cookies, no third-party requests.</p>
+      </div>
+      <div>
+        <h4>Site</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms of Use</a></li>
+          <li><a href="cookies.html">Cookie Policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="disclosure">Real work by the builder: <a href="https://bluedhaka.com">bluedhaka.com</a> — full e-commerce website designed + built by Tiyan Digital.</p>
+      <p>© <span id="year">2026</span> <span data-site>[Analyst Name]</span></p>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/site.js" defer></script>
+</body>
+</html>
