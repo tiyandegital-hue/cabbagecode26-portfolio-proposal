@@ -89,7 +89,9 @@ h1, h2, h3 { font-family: var(--font-d); font-weight: 700; letter-spacing: -0.02
 .lede { font-size: 1.1875rem; line-height: 1.6; color: var(--muted); max-width: 34rem; }
 
 /* masked line-rise (JS-gated; visible without JS) */
-.js .rise { overflow: hidden; display: block; }
+/* padding/margin compensation: the mask's overflow:hidden would otherwise clip
+   glyph ascenders/descenders at the display type's tight line-height */
+.js .rise { overflow: hidden; display: block; padding: .13em 0; margin: -.13em 0; }
 .js .rise > span { display: block; transform: translateY(110%); }
 .js .rise.in > span { transform: none; transition: transform .9s var(--ease); }
 .js .rise.in > span:nth-child(2) { transition-delay: .1s; }
